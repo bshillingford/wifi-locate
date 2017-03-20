@@ -56,7 +56,7 @@ def locate(scan_result):
     qs = [('browser', 'firefox'), ('sensor', 'true')]
     qs.extend(('wifi', 'mac:{0}|ssid:{1}|ss:{2}'.format(*tup))
               for tup in scan_result)
-    response = requests.get(url, qs)
+    response = requests.get(url, params=qs)
     res = response.json()
 
     return res['accuracy'], \
