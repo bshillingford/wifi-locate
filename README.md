@@ -15,7 +15,7 @@ pip install git+https://github.com/bshillingford/wifi-locate
 Example:
 ```python
 from wifilocate import locate, linux_scan
-accuracy, latlng = locate(linux_scan(device="wlan0"))
+accuracy, latlng = locate(linux_scan(device="wlan0", iwlist_path='/sbin/iwlist'))
 print(accuracy, latlng)  # e.g. 25, (50.1234567, -1.234567)
 ```
 
